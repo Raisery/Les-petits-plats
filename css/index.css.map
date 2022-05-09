@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACAA,AAAA,CAAC,CACD,CAAC,AAAA,OAAO,CACR,CAAC,AAAA,QAAQ,AAAC,CACN,MAAM,CAAE,CAAC,CACT,OAAO,CAAE,CAAC,CACb,AACD,AAAA,IAAI,AAAC,CACD,SAAS,CAAE,IAAI,CAClB,AACD,AAAA,IAAI,CAAC,CAAC,AAAA,CACF,UAAU,CAAE,UAAU,CACzB",
+    "sources": [
+        "../sass/index.scss",
+        "../sass/base/_base.scss"
+    ],
+    "names": [],
+    "file": "index.css"
+}

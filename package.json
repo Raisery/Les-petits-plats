@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./sass/main.scss:./css/style.css",
+    "sass": "sass --watch ./sass/main.scss:./css/style.css --style compressed",
+    "prefix": "postcss ./public/css/style.css --use autoprefixer -d ./css/",
     "lint": "eslint ."
   },
   "gitHooks": {
@@ -16,6 +17,7 @@
   },
   "author": "Raisery",
   "license": "ISC",
+  "browserslist": "last 4 versions",
   "bugs": {
     "url": "https://github.com/Raisery/Les-petits-plats/issues"
   },
