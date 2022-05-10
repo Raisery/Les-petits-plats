@@ -8,9 +8,6 @@
     "prefix": "postcss ./public/css/style.css --use autoprefixer -d ./css/",
     "lint": "eslint ."
   },
-  "gitHooks": {
-    "pre-push": "npm run lint"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Raisery/Les-petits-plats.git"
