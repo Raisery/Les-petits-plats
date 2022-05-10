@@ -26,23 +26,28 @@
                 <div class="filter__selectors-list">
                     <div id="ingredients" class="filter__selectors-list__selector selector">
                         <div class="selector__textfield">Ingrédients</div>
-                        <div class="arrow"></div>
+                        <div class="selector__arrow"></div>
                     </div>
                     <div id="appareils" class="filter__selectors-list__selector selector">
                         <div class="selector__textfield">Appareils</div>
-                        <div class="arrow"></div>
+                        <div class="selector__arrow"></div>
                     </div>
                     <div id="ustensiles" class="filter__selectors-list__selector selector">
                         <div class="selector__textfield">Ustensiles</div>
-                        <div class="arrow"></div>
+                        <div class="selector__arrow"></div>
                     </div>
                 </div>
             </div>
         </div>
     </header>
-    <main class="main">
+    <main class="main" id="main">
     </main>
-    <script src="javascripts/pages/index.js"></script>
+    <script src="data/recipes.js"></script>
+    <script src="https://requirejs.org/docs/release/2.3.6/minified/require.js"></script>
+    <script src="javascript/models/Recipe.js"></script>
+    <script src="javascript/pages/index.js"></script>
+
+
 </body>
 
 </html>

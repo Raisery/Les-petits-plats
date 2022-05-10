@@ -1,0 +1,32 @@
+.selector {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 70px;
+    width: 170px;
+    color: $colour-white;
+    border-radius: 5px;
+
+    &__arrow {
+        height: 10px;
+        width: 10px;
+        border: none;
+        border-top: solid;
+        border-right: solid;
+        border-color: $colour-white;
+        transform: rotate(135deg);
+    }
+
+}
+
+ #ingredients {
+    background: $colour-ingredients;
+ }
+
+ #appareils {
+     background: $colour-appareils;
+ }
+
+ #ustensiles {
+     background: $colour-ustensiles;
+ }
