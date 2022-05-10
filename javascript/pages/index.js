@@ -1,8 +1,16 @@
-
+const recipesList = [];
 async function init() {
-    document.getElementById("main");
+    const main = document.getElementById("main");
 
+    for (var recipeData of recipes) {
+        const recipe = new Recipe(recipeData);
+        recipesList.push(recipe);
+        main.appendChild(recipe.getCard());
+    }
 }
+
+
+
 
 init();
 

@@ -1,10 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-body *{
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body * {
     font-family: 'Lato', sans-serif;
     font-style: normal;
 }
 
-#search__form__search-bar, .selector{
+#search__form__search-bar,
+.selector {
     font-size: 18px;
     font-weight: 400;
+}
+
+.recipe-card {
+
+    &__infos {
+
+        &__header {
+
+            &__name {
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 22px;
+            }
+
+            &__time-container {
+
+                &__time-icon {
+                    font-size: 20px;
+                }
+            }
+        }
+
+        &__recipe {
+
+            &__ingredients-list {
+
+                &__ingredient {
+                    font-size: 12px;
+                    line-height: 14px;
+                }
+                
+            }
+
+            &__notice {
+                font-family: 'Roboto';
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 12px;
+            }
+        }
+    }
 }

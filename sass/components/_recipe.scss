@@ -1,0 +1,53 @@
+.recipe-card {
+    width: 380px;
+    height: 364px;
+    overflow: hidden;
+    border-radius: 5px;
+    background: $colour-grey;
+    margin-bottom: 50px;
+
+    &__preview {
+        height: 178px;
+        background: $colour-preview;
+    }
+
+    &__infos {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 184px;
+        padding: 18px;
+
+        &__header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+
+            &__name {
+                max-width: 70%;
+            }
+
+            &__time-container {
+                display: flex;
+                align-items: center;
+
+                &__time-icon {
+                    margin-right: 7px;
+                }
+            }
+        }
+
+        &__recipe {
+            display: flex;
+            overflow: hidden;
+
+            &__ingredients-list {
+                width: 50%;
+            }
+
+            &__notice {
+                width: 50%;
+            }
+        }
+    }
+}

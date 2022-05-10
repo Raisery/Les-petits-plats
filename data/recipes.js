@@ -20,7 +20,7 @@ const recipes = [
             },
             {
                 "ingredient": "Sucre",
-                "quantite": 30,
+                "quantity": 30,
                 "unit": "grammes"
             },
             {
@@ -56,7 +56,7 @@ const recipes = [
             },
             {
                 "ingredient": "Carotte",
-                "quantite": 1
+                "quantity": 1
             },
             {
                 "ingredient": "Citron Vert",
@@ -1898,5 +1898,5 @@ const recipes = [
     }
 ];
 
-//pour contourner l'erreru es lint unused var
+//pour contourner l'erreur es lint unused var
 console.log(recipes);
