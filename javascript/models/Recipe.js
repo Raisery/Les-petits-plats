@@ -1,4 +1,4 @@
-
+/* 
 class Recipe {
     constructor(data) {
         this.id = data.id;
@@ -11,10 +11,5 @@ class Recipe {
         this.ustensils = data.ustensil;
     }
 
-    static async getRecipes() {
-        const recipesJson = await fetch('data/recipes.json');
-        return recipesJson.recipes
-    }
+} */
 
-
-}
