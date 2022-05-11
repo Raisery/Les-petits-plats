@@ -1,4 +1,6 @@
 const recipesList = [];
+const infosTab = {ingredients: [], appareils: [], ustensils: []};
+
 async function init() {
     const main = document.getElementById("main");
 
@@ -7,6 +9,8 @@ async function init() {
         recipesList.push(recipe);
         main.appendChild(recipe.getCard());
     }
+
+    Recipe.setInfosTab(infosTab, recipesList);
 }
 
 

@@ -8,8 +8,15 @@ body * {
 
 #search__form__search-bar,
 .selector {
-    font-size: 18px;
-    font-weight: 400;
+    >input{
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+    >button {
+        font-size: 18px;
+        font-weight: 400;
+    }
 }
 
 .recipe-card {
@@ -52,3 +59,4 @@ body * {
         }
     }
 }
+

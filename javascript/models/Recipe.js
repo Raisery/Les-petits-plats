@@ -9,12 +9,13 @@ class Recipe {
             this.time = data.time;
             this.description = data.description;
             this.appliance = data.appliance;
-            this.ustensils = data.ustensil;
+            this.ustensils = data.ustensils;
         }
 
 
     }
 
+    //retourne le code html de la recette
     getCard() {
         const article = document.createElement("article");
         article.classList.add("recipe-card")
@@ -88,7 +89,43 @@ class Recipe {
         return article
     }
 
+    static setInfosTab(infosTab, recipesList) {
+        var added = 0;
+        var unadded = 0;
+        recipesList.forEach(recipe => {
 
+            recipe.ingredients.forEach(element => {
+                if (!infosTab.ingredients.includes(element.ingredient.toLowerCase())) {
+                    infosTab.ingredients.push(element.ingredient.toLowerCase());
+                }
+            });
+
+            if (!infosTab.appareils.includes(recipe.appliance.toLowerCase())) {
+                infosTab.appareils.push(recipe.appliance.toLowerCase());
+            }
+
+
+            recipe.ustensils.forEach(ustensil => {
+                if (!infosTab.ustensils.includes(ustensil.toLowerCase())) {
+                    infosTab.ustensils.push(ustensil.toLowerCase());
+                    added++;
+                }
+                else {
+                    unadded++;
+                }
+            });
+
+
+
+        });
+
+        infosTab.ingredients.sort();
+        infosTab.appareils.sort();
+        infosTab.ustensils.sort();
+        console.log(`${infosTab.ustensils} \n
+        avec ${added} uniques et ${unadded} 
+        doublons pour un total de ${added + unadded}`);
+    }
 }
 
 //pour  contourner l'erreur esLint

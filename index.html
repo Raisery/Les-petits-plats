@@ -15,31 +15,37 @@
         <a href="index.html" class="header__logo-link" aria-label="Page d'accueil">
             <img src="assets/logo.svg" class="header__logo-link__logo" alt="Logo Les petits plats" />
         </a>
-        <div class="search">
-            <form class="search__form">
+        <formc lass="search">
+            <div class="search__form">
                 <label class="hidden" for="search__form__search-bar">Rechercher une recette</label>
                 <input type="text" class="search__form__search-bar" id="search__form__search-bar"
                     name="search__form__search-bar" placeholder="Rechercher une recette">
                 <i class="fas fa-search"></i>
-            </form>
+            </div>
             <div class="filter">
                 <div class="filter__list"></div>
                 <div class="filter__selectors-list">
-                    <div id="ingredients" class="filter__selectors-list__selector selector">
-                        <div class="selector__textfield">Ingrédients</div>
-                        <div class="selector__arrow"></div>
+                    <div id="ingredients-selector" class="filter__selectors-list__selector selector">
+                        <button id="ingredient-button" type="button" aria-label="cliquer rechercher un ingrédient" onclick="displayOptions()">Ingrédient</button>
+                        <input id="ingredients" class="selector__textfield" placeholder="Rechercher un ingrédients">
+                        <div class="selector__list"></div>
+                        <div class="selector__arrow selector__arrow--down"></div>
                     </div>
-                    <div id="appareils" class="filter__selectors-list__selector selector">
-                        <div class="selector__textfield">Appareils</div>
-                        <div class="selector__arrow"></div>
+                    <div id="appareils-selector" class="filter__selectors-list__selector selector">
+                        <button id="appareils-button" type="button" aria-label="cliquer rechercher un appareil" onclick="displayOptions()">Appareils</button>
+                        <input id="appareils" class="selector__textfield" placeholder="Rechercher un appareils">
+                        <div class="selector__list"></div>
+                        <div class="selector__arrow selector__arrow--down"></div>
                     </div>
-                    <div id="ustensiles" class="filter__selectors-list__selector selector">
-                        <div class="selector__textfield">Ustensiles</div>
-                        <div class="selector__arrow"></div>
+                    <div id="ustensiles-selector" class="filter__selectors-list__selector selector">
+                        <button id="ustensiles-button" type="button" aria-label="cliquer rechercher un ustensile" onclick="displayOptions()">Ustensiles</button>
+                        <input id="ustensiles"class="selector__textfield" placeholder="Rechercher un ustensiles">
+                        <div class="selector__list"></div>
+                        <div class="selector__arrow selector__arrow--down"></div>
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
     </header>
     <main class="main" id="main">
     </main>
