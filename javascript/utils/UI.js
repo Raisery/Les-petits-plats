@@ -12,6 +12,7 @@ class UI {
     static generateSelectors() {
         for (let selector of Selector.SELECTORS) {
             let nbItems = 1;
+            selector.html.childNodes[5].innerHTML ="";
             for (let element of selector.list) {
                 if (nbItems <= 30) {
                     const elt = document.createElement("p");

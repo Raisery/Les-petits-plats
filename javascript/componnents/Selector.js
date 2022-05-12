@@ -2,7 +2,16 @@ class Selector {
 
     constructor(type) {
 
-        switch (type) {
+       
+        this.active = false;
+        this.type = type;
+        this.search = null;
+        this.list = [];
+        this.getList();
+    }
+
+    getList() {
+        switch (this.type) {
             case Selector.INGREDIENTS:
                 this.list = Data.getIngredientList();
                 this.html = document.getElementById("ingredients-selector");
@@ -19,8 +28,27 @@ class Selector {
                 console.log("INVALID TYPE FOR Selector CONSTRUCTOR");
                 return
         }
-        this.active = false;
-        this.type = type;
+    }
+
+    update() {
+        this.getList()
+        if(this.search.length >= 3) {
+            const res = []
+            for(let word of this.list) {
+                let includes = true;
+                for(let i=0; i<this.search.length; i++) {
+                    if(word[i].toLowerCase() != this.search[i].toLowerCase()) {
+                        includes = false;
+                    }
+                }
+                if(includes) {
+                    res.push(word);
+                }
+            }
+            this.list = res;
+
+        }
+        UI.generateSelectors();
     }
 
     static generateSelectors() {
@@ -35,6 +63,15 @@ class Selector {
                 if (!selectors[i].active) {
                     Selector.hideLists();
                     Selector.showList(i);
+                }
+            }
+
+            //event clavier
+            selectors[i].html.childNodes[3].onkeyup = function (e) {
+                //stoppropagation pour que l'evenement ne sois pas capté par le body
+                if (selectors[i].active) {
+                    selectors[i].search = selectors[i].html.childNodes[3].value;
+                    selectors[i].update();
                 }
             }
         }
