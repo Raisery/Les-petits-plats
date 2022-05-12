@@ -1897,6 +1897,3 @@ const recipes = [
         ]
     }
 ];
-
-//pour contourner l'erreur es lint unused var
-console.log(recipes);

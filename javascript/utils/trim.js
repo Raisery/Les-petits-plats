@@ -4,10 +4,10 @@ function trim() {
     // si il n'y en a pas on va jusqu'a la ligne d'aprés si il faut et on s'arrete a la premiere virgule
     const limitCharsByline = 35;
     const descriptions = document.querySelectorAll(".recipe-card__infos__recipe__notice");
-    for (let i = 0; i < recipesList.length; i++) {
+    for (let i = 0; i < recipes.length; i++) {
         descriptions[i].textContent = "";
-        const description = recipesList[i].description;
-        const nbLinesMax = recipesList[i].ingredients.length;
+        const description = recipes[i].description;
+        const nbLinesMax = recipes[i].ingredients.length;
         const descripitonChars = description.split('');
         if(descripitonChars[descripitonChars.length-1] != ".") {
             descripitonChars.push(".");
@@ -89,5 +89,3 @@ function trim() {
 
     }
 }
-
-trim();

@@ -10,7 +10,7 @@
     <link rel="icon" href="assets/favicon.svg" />
 </head>
 
-<body>
+<body id="body">
     <header class="header">
         <a href="index.html" class="header__logo-link" aria-label="Page d'accueil">
             <img src="assets/logo.svg" class="header__logo-link__logo" alt="Logo Les petits plats" />
@@ -26,19 +26,19 @@
                 <div class="filter__list"></div>
                 <div class="filter__selectors-list">
                     <div id="ingredients-selector" class="filter__selectors-list__selector selector">
-                        <button id="ingredient-button" type="button" aria-label="cliquer rechercher un ingrédient" onclick="displayOptions()">Ingrédient</button>
+                        <button id="ingredient-button" type="button" aria-label="cliquer rechercher un ingrédient">Ingrédient</button>
                         <input id="ingredients" class="selector__textfield" placeholder="Rechercher un ingrédients">
                         <div class="selector__list"></div>
                         <div class="selector__arrow selector__arrow--down"></div>
                     </div>
                     <div id="appareils-selector" class="filter__selectors-list__selector selector">
-                        <button id="appareils-button" type="button" aria-label="cliquer rechercher un appareil" onclick="displayOptions()">Appareils</button>
+                        <button id="appareils-button" type="button" aria-label="cliquer rechercher un appareil">Appareils</button>
                         <input id="appareils" class="selector__textfield" placeholder="Rechercher un appareils">
                         <div class="selector__list"></div>
                         <div class="selector__arrow selector__arrow--down"></div>
                     </div>
                     <div id="ustensiles-selector" class="filter__selectors-list__selector selector">
-                        <button id="ustensiles-button" type="button" aria-label="cliquer rechercher un ustensile" onclick="displayOptions()">Ustensiles</button>
+                        <button id="ustensiles-button" type="button" aria-label="cliquer rechercher un ustensile">Ustensiles</button>
                         <input id="ustensiles"class="selector__textfield" placeholder="Rechercher un ustensiles">
                         <div class="selector__list"></div>
                         <div class="selector__arrow selector__arrow--down"></div>
@@ -50,10 +50,15 @@
     <main class="main" id="main">
     </main>
     <script src="data/recipes.js"></script>
-    <script src="javascript/models/Recipe.js"></script>
-    <script src="javascript/pages/index.js"></script>
-    <script src="javascript/utils/trim.js"></script>
 
+    <script src="javascript/models/Recipe.js"></script>
+    <script src="javascript/utils/Data.js"></script>
+    <script src="javascript/componnents/Selector.js"></script>
+    <script src="javascript/utils/trim.js"></script>
+    <script src="javascript/utils/UI.js"></script>
+
+    <script src="javascript/pages/index.js"></script>
+    
 
 </body>
 
