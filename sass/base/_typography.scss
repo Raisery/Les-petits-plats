@@ -8,7 +8,7 @@ body * {
 
 #search__form__search-bar,
 .selector {
-    >input{
+    >input {
         font-size: 18px;
         font-weight: 400;
     }
@@ -52,7 +52,7 @@ body * {
                     font-size: 12px;
                     line-height: 14px;
                 }
-                
+
             }
 
             &__notice {
@@ -65,3 +65,18 @@ body * {
     }
 }
 
+.filter {
+    &__list {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 17px;
+        text-align: left;
+
+        &__item {
+            & i {
+                font-size: 24px;
+                color: $colour-white;
+            }
+        }
+    }
+}

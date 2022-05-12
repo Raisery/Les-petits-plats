@@ -14,6 +14,7 @@
             border-radius: 5px;
             padding: 23px;
             font-size: 18px;
+
             &::placeholder {
                 opacity: 0.25;
 
@@ -31,13 +32,41 @@
 
 .filter {
     width: 100%;
-    height: 120px;
     margin-bottom: 25px;
 
     &__list {
         display: flex;
+        flex-wrap: wrap;
+        &__item {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px 10px 20px;
+            margin-bottom: 15px;
+            margin-right: 10px;
+            border-radius: 5px;
 
+            &__name {
+                color: $colour-white;
+                margin-right: 15px;
+            }
+
+            & i {
+                cursor: pointer;
+            }
+            &--filter-type0 {
+                background: $colour-ingredients;
+            }
+            &--filter-type1 {
+                background: $colour-appareils;
+            }
+            &--filter-type2 {
+                background: $colour-ustensiles;
+            }
+        }
     }
+
+
+
     &__selectors-list {
         display: flex;
 
