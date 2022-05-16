@@ -53,7 +53,10 @@ class Search {
                 }
             }
             if (!resultat.length) {
-                //afficher qu'aucun resultat ne correspond a la recherche
+                const error = document.createElement("h2");
+                error.classList.add('empty-search');
+                error.textContent = 'Aucune recette ne correspond à votre critère… vous pouvez chercher « tarte aux pommes », « poisson », etc.';
+                main.appendChild(error);
                 return
             }
             currentSearchResult = resultat;
