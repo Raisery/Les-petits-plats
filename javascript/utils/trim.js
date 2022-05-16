@@ -4,10 +4,11 @@ function trim() {
     // si il n'y en a pas on va jusqu'a la ligne d'aprés si il faut et on s'arrete a la premiere virgule
     const limitCharsByline = 35;
     const descriptions = document.querySelectorAll(".recipe-card__infos__recipe__notice");
-    for (let i = 0; i < recipes.length; i++) {
+    const ingredients = document.querySelectorAll(".recipe-card__infos__recipe__ingredients-list");
+    for (let i = 0; i < descriptions.length; i++) {
+        const description = descriptions[i].textContent;
         descriptions[i].textContent = "";
-        const description = recipes[i].description;
-        const nbLinesMax = recipes[i].ingredients.length;
+        const nbLinesMax = ingredients[i].childNodes.length;
         const descripitonChars = description.split('');
         if(descripitonChars[descripitonChars.length-1] != ".") {
             descripitonChars.push(".");

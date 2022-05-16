@@ -1,12 +1,7 @@
 class UI {
+
     static generateMain() {
         const main = document.getElementById("main");
-        for (var recipeData of recipes) {
-            const recipe = new Recipe(recipeData);
-            Data.recipesList.push(recipe);
-            main.appendChild(recipe.getCard());
-        }
-        trim();
     }
 
     static generateSelectors() {

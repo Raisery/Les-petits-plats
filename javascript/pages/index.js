@@ -1,6 +1,10 @@
 async function init() {
-    UI.generateMain();
-    UI.generateSelectors();
+    document.getElementById("body").onclick = function (e) {
+        Selector.hideLists();
+
+    }
+    const search = new Search();
+
 }
 
 init();

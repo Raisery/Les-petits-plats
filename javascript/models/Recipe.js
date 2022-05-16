@@ -5,11 +5,19 @@ class Recipe {
             this.id = data.id;
             this.name = data.name;
             this.servings = data.servings;
-            this.ingredients = data.ingredients;
             this.time = data.time;
             this.description = data.description;
-            this.appliance = data.appliance;
-            this.ustensils = data.ustensils;
+            this.ingredients = [];
+            for(let ingredient of data.ingredients) {
+                this.ingredients.push(ingredient);
+                this.ingredients[this.ingredients.length-1].ingredient = ingredient.ingredient.toLowerCase();
+            }
+            this.appliance = data.appliance.toLowerCase();
+            this.ustensils = [];
+            for(let ustensil of data.ustensils) {
+                this.ustensils.push(ustensil.toLowerCase());
+            }
+            
         }
     }
 
@@ -47,7 +55,7 @@ class Recipe {
         for (var ingredient of this.ingredients) {
             const element = document.createElement("div");
             element.classList.add("recipe-card__infos__recipe__ingredients-list__ingredient");
-            element.innerHTML = `<strong>${ingredient.ingredient}</strong>`;
+            element.innerHTML = `<strong>${ingredient.ingredient[0].toUpperCase() + ingredient.ingredient.slice(-(ingredient.ingredient.length-1))}</strong>`;
             var unit = "";
             if (ingredient.quantity) {
                 if (ingredient.unit) {

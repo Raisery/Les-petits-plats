@@ -1,15 +1,15 @@
 class Data {
 
     static getIngredientList() {
-        return Data.infosTab.ingredients
+        return Data.infosTab.ingredients.slice()
     }
 
     static getAppareilsList() {
-        return Data.infosTab.appareils
+        return Data.infosTab.appareils.slice()
     }
 
     static getUstensilsList() {
-        return Data.infosTab.ustensils
+        return Data.infosTab.ustensils.slice()
     }
 
     static generateRecipesList() {
@@ -40,6 +40,6 @@ class Data {
         });
     }
 }
-Data.recipesList = [];
+
 Data.infosTab = {ingredients: [], appareils: [], ustensils: []};
-Data.setInfosTab(Data.infosTab, recipes);
+Data.setInfosTab(Data.infosTab, recipesData);
