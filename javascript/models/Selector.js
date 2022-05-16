@@ -68,7 +68,7 @@ class Selector {
     }
 
     static hideLists() {
-        for (let selector of Selector.SELECTORS) {
+        Selector.SELECTORS.forEach(selector => {
             selector.html.style.width = "170px";
             selector.html.childNodes[1].style.display = "block";
             selector.html.childNodes[3].style.display = "none";
@@ -76,42 +76,34 @@ class Selector {
             selector.html.childNodes[7].classList.remove("selector__arrow--up");
             selector.html.childNodes[7].classList.add("selector__arrow--down");
             selector.active = false;
-        }
+        });
 
     }
 
     update() {
         var resultat = [];
         if(this.valueSearchBar) {
-            for(let item of this.list) {
+            this.list.forEach(item => {
                 if(item.includes(this.valueSearchBar.toLowerCase())) {
                     resultat.push(item);
                 }
-            }
+            });
         }
         else {
             resultat = this.list.slice();
         }
         this.displayList = resultat
-        console.log(this.displayList)
 
         const selector = this;
         var nbItems = 1;
         this.html.childNodes[5].innerHTML = "";
-        for(let item of this.displayList) {
+        this.displayList.forEach(item => {
             if (nbItems <= 30) {
                 const itemHTML = document.createElement("p");
                 itemHTML.classList.add("selector__list__item");
                 var content = "";
-                for (let i = 0; i < item.length; i++) {
-                    if (i == 0) {
-                        content += item[i].toUpperCase();
-                    }
-                    else {
-                        content += item[i];
-                    }
-
-                }
+                content += item[0].toUpperCase();
+                content += item.slice(1);
                 itemHTML.textContent = content;
 
                 itemHTML.addEventListener('click', function(e) {
@@ -152,7 +144,7 @@ class Selector {
                 this.html.childNodes[5].appendChild(itemHTML);
             }
             nbItems++;
-        }
+        });
     }
 }
 

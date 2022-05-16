@@ -10,9 +10,9 @@ class Search {
         this.searchValue = null;
         this.tagList = [];
 
-        for (let recipe of recipesData) {
+        recipesData.forEach(recipe => {
             this.recipesList.push(new Recipe(recipe));
-        }
+        });
         this.update();
 
         let search = this;
@@ -20,11 +20,8 @@ class Search {
             e.stopPropagation();
             if (search.searchBar.value.length >= 3) {
                 search.searchValue = search.searchBar.value;
-                console.log("SEARCH VALUE SET AS")
-                console.log(search.searchValue)
             }
             else {
-                console.log("SEARCH VALUE SET AS NULL")
                 search.searchValue = null;
             }
             search.update();
@@ -37,21 +34,17 @@ class Search {
         main.innerHTML = "";
         var resultat = [];
         if (this.searchValue != null) {
-            console.log("SEARCH VALUE EXIST")
-            for (let recipe of currentSearchResult) {
+            currentSearchResult.forEach(recipe => {
                 if (recipe.name.toLowerCase().includes(this.searchValue.toLowerCase())) {
-                    console.log(recipe)
                     resultat.push(recipe);
                 }
                 else if (recipe.ingredients.includes(this.searchValue.toLowerCase())) {
-                    console.log(recipe)
                     resultat.push(recipe);
                 }
                 else if (recipe.description.toLowerCase().includes(this.searchValue.toLowerCase())) {
-                    console.log(recipe)
                     resultat.push(recipe);
                 }
-            }
+            });
             if (!resultat.length) {
                 //afficher qu'aucun resultat ne correspond a la recherche
                 return
@@ -60,14 +53,14 @@ class Search {
             resultat = [];
         }
         if(this.tagList.length) {
-            for(let recipe of currentSearchResult) {
+            currentSearchResult.forEach(recipe => {
                 var isValid = true;
-                for(let tag of this.tagList) {
+                this.tagList.forEach(tag => {
                     const ingredients = [];
 
-                    for(let ingredient of recipe.ingredients) {
+                    recipe.ingredients.forEach(ingredient => {
                         ingredients.push(ingredient.ingredient);
-                    }
+                    });
                     if(
                         !ingredients.includes(tag.toLowerCase()) &&
                         !(recipe.appliance == tag.toLowerCase()) &&
@@ -76,36 +69,36 @@ class Search {
                     {
                         isValid = false;
                     }
-                }
+                });
                 if(isValid) {
                     resultat.push(recipe);
                 }
-            }
+            });
             currentSearchResult = resultat;
         }
         
         this.ingredientSearch.list = [];
         this.appareilsSearch.list = [];
         this.ustensilsSearch.list = [];
-        for (let recipe of currentSearchResult) {
+        currentSearchResult.forEach(recipe => {
             const r = recipe.getCard();
             main.appendChild(r);
-            for(let ingredient of recipe.ingredients) {
+            recipe.ingredients.forEach(ingredient => {
                 if(!this.ingredientSearch.list.includes(ingredient.ingredient)) {
                 this.ingredientSearch.list.push(ingredient.ingredient);
                 }
-            }
+            });
             if(!this.appareilsSearch.list.includes(recipe.appliance)) {
                 this.appareilsSearch.list.push(recipe.appliance);
             }
             
-            for(let ustensil of recipe.ustensils) {
+            recipe.ustensils.forEach(ustensil => {
                 if(!this.ustensilsSearch.list.includes(ustensil)) {
                     this.ustensilsSearch.list.push(ustensil);
                 }
-            }
+            });
             
-        }
+        });
         trim();
         this.ingredientSearch.update();
         this.appareilsSearch.update();
