@@ -1,24 +1,24 @@
 const searchValue = "coc";
 const tagList = [];
 var currentSearchResult = recipesData;
-var resultat = [];
+var resultat = new Map();
 if (searchValue != null) {
     currentSearchResult.forEach(recipe => {
         if (recipe.name.toLowerCase().includes(searchValue.toLowerCase())) {
-            resultat.push(recipe);
+            resultat.set(recipe.id, recipe);
         }
         else if (recipe.ingredients.includes(searchValue.toLowerCase())) {
-            resultat.push(recipe);
+            resultat.set(recipe.id, recipe);
         }
         else if (recipe.description.toLowerCase().includes(searchValue.toLowerCase())) {
-            resultat.push(recipe);
+            resultat.set(recipe.id, recipe);
         }
     });
     if (!resultat.length) {
         console.log("FINI")
     }
     currentSearchResult = resultat;
-    resultat = [];
+    resultat = new Map();
 }
 if (tagList.length) {
     currentSearchResult.forEach(recipe => {
@@ -38,7 +38,7 @@ if (tagList.length) {
             }
         });
         if (isValid) {
-            resultat.push(recipe);
+            resultat.set(recipe.id, recipe);
         }
     });
     currentSearchResult = resultat;

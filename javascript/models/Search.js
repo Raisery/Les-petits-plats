@@ -6,12 +6,12 @@ class Search {
         this.ingredientSearch = new Selector(Selector.INGREDIENTS, this);
         this.appareilsSearch = new Selector(Selector.APPAREILS, this);
         this.ustensilsSearch = new Selector(Selector.USTENSILS, this);
-        this.recipesList = [];
+        this.recipesList = new Map();
         this.searchValue = null;
         this.tagList = [];
 
         recipesData.forEach(recipe => {
-            this.recipesList.push(new Recipe(recipe));
+            this.recipesList.set(recipe.id, new Recipe(recipe));
         });
         this.update();
 
@@ -32,17 +32,17 @@ class Search {
         const main = document.getElementById("main");
         var currentSearchResult = this.recipesList;
         main.innerHTML = "";
-        var resultat = [];
+        var resultat = new Map();
         if (this.searchValue != null) {
             currentSearchResult.forEach(recipe => {
                 if (recipe.name.toLowerCase().includes(this.searchValue.toLowerCase())) {
                     resultat.push(recipe);
                 }
                 else if (recipe.ingredients.includes(this.searchValue.toLowerCase())) {
-                    resultat.push(recipe);
+                    resultat.set(recipe.id, recipe);
                 }
                 else if (recipe.description.toLowerCase().includes(this.searchValue.toLowerCase())) {
-                    resultat.push(recipe);
+                    resultat.set(recipe.id, recipe);
                 }
             });
             if (!resultat.length) {
@@ -53,7 +53,7 @@ class Search {
                 return
             }
             currentSearchResult = resultat;
-            resultat = [];
+            resultat = new Map();
         }
         if(this.tagList.length) {
             currentSearchResult.forEach(recipe => {
@@ -74,7 +74,7 @@ class Search {
                     }
                 });
                 if(isValid) {
-                    resultat.push(recipe);
+                    resultat.set(recipe.id, recipe);
                 }
             });
             currentSearchResult = resultat;
