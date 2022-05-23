@@ -1,7 +1,10 @@
 const searchValue = "coc";
 const tagList = [];
-var currentSearchResult = recipesData;
+var currentSearchResult = new Map();
 var resultat = new Map();
+recipesData.forEach(recipe => {
+    currentSearchResult.set(recipe.id, recipe);
+});
 if (searchValue != null) {
     currentSearchResult.forEach(recipe => {
         if (recipe.name.toLowerCase().includes(searchValue.toLowerCase())) {
@@ -14,9 +17,6 @@ if (searchValue != null) {
             resultat.set(recipe.id, recipe);
         }
     });
-    if (!resultat.length) {
-        console.log("FINI")
-    }
     currentSearchResult = resultat;
     resultat = new Map();
 }

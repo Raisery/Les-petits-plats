@@ -36,7 +36,7 @@ class Search {
         if (this.searchValue != null) {
             currentSearchResult.forEach(recipe => {
                 if (recipe.name.toLowerCase().includes(this.searchValue.toLowerCase())) {
-                    resultat.push(recipe);
+                    resultat.set(recipe.id,recipe);
                 }
                 else if (recipe.ingredients.includes(this.searchValue.toLowerCase())) {
                     resultat.set(recipe.id, recipe);
@@ -45,7 +45,7 @@ class Search {
                     resultat.set(recipe.id, recipe);
                 }
             });
-            if (!resultat.length) {
+            if (!resultat.size) {
                 const error = document.createElement("h2");
                 error.classList.add('empty-search');
                 error.textContent = 'Aucune recette ne correspond à votre critère… vous pouvez chercher « tarte aux pommes », « poisson », etc.';
