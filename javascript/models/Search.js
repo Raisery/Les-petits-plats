@@ -20,11 +20,8 @@ class Search {
             e.stopPropagation();
             if (search.searchBar.value.length >= 3) {
                 search.searchValue = search.searchBar.value;
-                console.log("SEARCH VALUE SET AS")
-                console.log(search.searchValue)
             }
             else {
-                console.log("SEARCH VALUE SET AS NULL")
                 search.searchValue = null;
             }
             search.update();
