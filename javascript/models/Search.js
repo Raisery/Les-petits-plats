@@ -37,7 +37,6 @@ class Search {
         main.innerHTML = "";
         var resultat = [];
         if (this.searchValue != null) {
-            console.log("SEARCH VALUE EXIST")
             for (let recipe of currentSearchResult) {
                 if (recipe.name.toLowerCase().includes(this.searchValue.toLowerCase())) {
                     console.log(recipe)
@@ -62,6 +61,8 @@ class Search {
             currentSearchResult = resultat;
             resultat = [];
         }
+
+        //affinage avec les tags
         if(this.tagList.length) {
             for(let recipe of currentSearchResult) {
                 var isValid = true;
