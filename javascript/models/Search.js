@@ -34,18 +34,14 @@ class Search {
         main.innerHTML = "";
         var resultat = [];
         if (this.searchValue != null) {
-            console.log("SEARCH VALUE EXIST")
             for (let recipe of currentSearchResult) {
                 if (recipe.name.toLowerCase().includes(this.searchValue.toLowerCase())) {
-                    console.log(recipe)
                     resultat.push(recipe);
                 }
                 else if (recipe.ingredients.includes(this.searchValue.toLowerCase())) {
-                    console.log(recipe)
                     resultat.push(recipe);
                 }
                 else if (recipe.description.toLowerCase().includes(this.searchValue.toLowerCase())) {
-                    console.log(recipe)
                     resultat.push(recipe);
                 }
             }
