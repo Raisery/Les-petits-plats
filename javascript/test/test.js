@@ -1,11 +1,13 @@
 const searchValue = "coc";
-const tagList = [];
-var currentSearchResult = new Map();
+const recipeDataMap = new Map();
+for(let recipe of recipeData) {
+	recipeDataMap.set(recipe.id, recipe);
+}
+
+var currentSearchResult = recipeDataMap;
 var resultat = new Map();
-recipesData.forEach(recipe => {
-    currentSearchResult.set(recipe.id, recipe);
-});
-if (searchValue != null) {
+
+if (searchValue != null && searchValue.length >= 3) {
     currentSearchResult.forEach(recipe => {
         if (recipe.name.toLowerCase().includes(searchValue.toLowerCase())) {
             resultat.set(recipe.id, recipe);
@@ -19,27 +21,4 @@ if (searchValue != null) {
     });
     currentSearchResult = resultat;
     resultat = new Map();
-}
-if (tagList.length) {
-    currentSearchResult.forEach(recipe => {
-        var isValid = true;
-        tagList.forEach(tag => {
-            const ingredients = [];
-
-            recipe.ingredients.forEach(ingredient => {
-                ingredients.push(ingredient.ingredient);
-            });
-            if (
-                !ingredients.includes(tag.toLowerCase()) &&
-                !(recipe.appliance == tag.toLowerCase()) &&
-                !recipe.ustensils.includes(tag.toLowerCase())
-            ) {
-                isValid = false;
-            }
-        });
-        if (isValid) {
-            resultat.set(recipe.id, recipe);
-        }
-    });
-    currentSearchResult = resultat;
 }
