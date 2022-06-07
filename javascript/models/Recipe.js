@@ -1,3 +1,7 @@
+/*
+    Classe de modélisation d'une recette
+*/
+
 class Recipe {
 
     constructor(data) {
