@@ -1,8 +1,7 @@
+/*
+    Classe de gestion de l'affichage de la page
+*/
 class UI {
-
-    static generateMain() {
-        const main = document.getElementById("main");
-    }
 
     static generateSelectors() {
         for (let selector of Selector.SELECTORS) {

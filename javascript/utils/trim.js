@@ -1,4 +1,6 @@
-
+/*
+    Fonction de formatage de la description des recettes
+*/
 function trim() {
     //lorsqu'on est a la derniere ligne, si c'est pas fini on cherche le point,
     // si il n'y en a pas on va jusqu'a la ligne d'aprés si il faut et on s'arrete a la premiere virgule
