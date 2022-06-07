@@ -3,6 +3,9 @@
 */
 class UI {
 
+    /*
+        Fonction de création des selectors
+    */
     static generateSelectors() {
         for (let selector of Selector.SELECTORS) {
             let nbItems = 1;
