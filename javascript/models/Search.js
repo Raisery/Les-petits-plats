@@ -59,6 +59,7 @@ class Search {
                 }
             });
             if (!resultat.size) {
+
                 const error = document.createElement("h2");
                 error.classList.add('empty-search');
                 error.textContent = 'Aucune recette ne correspond à votre critère… vous pouvez chercher « tarte aux pommes », « poisson », etc.';
@@ -68,6 +69,8 @@ class Search {
             currentSearchResult = resultat;
             resultat = new Map();
         }
+
+        //affinage avec les tags
         if(this.tagList.length) {
             currentSearchResult.forEach(recipe => {
                 var isValid = true;
