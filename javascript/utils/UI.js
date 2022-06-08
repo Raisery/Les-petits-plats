@@ -1,9 +1,11 @@
+/*
+    Classe de gestion de l'affichage de la page
+*/
 class UI {
 
-    static generateMain() {
-        const main = document.getElementById("main");
-    }
-
+    /*
+        Fonction de création des selectors
+    */
     static generateSelectors() {
         for (let selector of Selector.SELECTORS) {
             let nbItems = 1;

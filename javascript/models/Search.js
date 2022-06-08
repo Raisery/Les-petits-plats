@@ -1,3 +1,6 @@
+/*
+Classe de la fonctionnalité de recherche
+*/
 class Search {
 
     constructor() {
@@ -28,6 +31,9 @@ class Search {
         });
     }
 
+     /* 
+    Methode de mise jour de l'affichage des resultat de la recherche
+    */
     update() {
         const main = document.getElementById("main");
         var currentSearchResult = this.recipesList;
@@ -109,12 +115,18 @@ class Search {
        
     }
 
+    /*
+        Ajoute un tag a la liste
+    */
     addTag(tag) {
         if (!this.tagList.includes(tag)) {
             this.tagList.push(tag);
         }
     }
 
+    /*
+        Retire un tag de la liste
+    */
     removeTag(tag) {
         if (this.tagList.includes(tag)) {
             let index = this.tagList.indexOf(tag);

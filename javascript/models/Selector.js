@@ -1,3 +1,6 @@
+/*
+    Classe de gestion de recherche avancée
+*/
 class Selector {
 
     constructor(type,search) {
@@ -47,10 +50,9 @@ class Selector {
         
     }
 
-    getList() {
-        
-    }
-
+    /*
+        Affichage de la liste des tags possible du selector
+    */
     showList() {
         Selector.hideLists();
         
@@ -67,6 +69,9 @@ class Selector {
 
     }
 
+    /*
+        Masque la liste des tags de tous les selector
+    */
     static hideLists() {
         for (let selector of Selector.SELECTORS) {
             selector.html.style.width = "170px";
@@ -80,6 +85,9 @@ class Selector {
 
     }
 
+    /* 
+        Methode de mise à jour de la liste de tags possible en fonction de la recherche
+    */
     update() {
         var resultat = [];
         if(this.valueSearchBar) {

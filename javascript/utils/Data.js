@@ -1,17 +1,32 @@
+/*
+    Classe de gestion des données
+*/
 class Data {
 
+    /*
+        retourne la liste de tous les ingredients
+    */
     static getIngredientList() {
         return Data.infosTab.ingredients.slice()
     }
 
+    /*
+        retourne la liste de tous les appareils
+    */
     static getAppareilsList() {
         return Data.infosTab.appareils.slice()
     }
 
+    /*
+        retourne la liste de tout les ustensils
+    */
     static getUstensilsList() {
         return Data.infosTab.ustensils.slice()
     }
 
+    /*
+        Génére la liste de toutes les recettes a partir des données
+    */
     static generateRecipesList() {
         for (var recipeData of recipes) {
             const recipe = new Recipe(recipeData);
@@ -19,6 +34,9 @@ class Data {
         }
     }
 
+    /*
+        Modifie infosTab avec les les données de recipes
+    */
     static setInfosTab(infosTab, recipes) {
         recipes.forEach(recipe => {
 

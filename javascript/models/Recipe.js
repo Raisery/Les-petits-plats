@@ -1,3 +1,7 @@
+/*
+    Classe de modélisation d'une recette
+*/
+
 class Recipe {
 
     constructor(data) {
@@ -29,7 +33,7 @@ class Recipe {
         preview.classList.add("recipe-card__preview");
         const recipeInfos = document.createElement("div");
         recipeInfos.classList.add("recipe-card__infos");
-        //
+        
         const header = document.createElement("div");
         header.classList.add("recipe-card__infos__header");
         const name = document.createElement("h2");
@@ -37,7 +41,7 @@ class Recipe {
         name.classList.add("recipe-card__infos__header__name");
         const timeContainer = document.createElement("div");
         timeContainer.classList.add("recipe-card__infos__header__time-container");
-        //
+        
         const timeIcon = document.createElement("i");
         timeIcon.classList.add("far");
         timeIcon.classList.add("fa-clock");
@@ -45,7 +49,7 @@ class Recipe {
         const timeText = document.createElement("h3");
         timeText.textContent = `${this.time} min`;
         timeText.classList.add("recipe-card__infos__header__time-container__time-text");
-        //
+        
         const recipe = document.createElement("div");
         recipe.classList.add("recipe-card__infos__recipe");
 
