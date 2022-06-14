@@ -18,7 +18,6 @@ class Search {
                 console.log('Mauvais id renseigné pour cette recette (id déja utilisé) :', recipe)
             }
             else {
-                console.log('Recette chargée id :', recipe.id)
                 this.recipesList.set(recipe.id, new Recipe(recipe));
             }
             
